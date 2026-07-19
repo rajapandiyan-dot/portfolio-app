@@ -1,0 +1,12 @@
+{
+  "name": "editor-portfolio",
+  "version": "1.0.0",
+  "description": "Simple Node.js + Express portfolio site for a Photo/Video editor",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

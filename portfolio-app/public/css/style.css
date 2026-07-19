@@ -1,0 +1,302 @@
+:root {
+  --black: #0a0a0a;
+  --charcoal: #171717;
+  --white: #ffffff;
+  --grey: #f2f2f2;
+  --red: #e10600;
+
+  --font-main: 'Anton', sans-serif;   /* bold display font */
+  --font-secondary: 'Inter', sans-serif; /* normal body font */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-narrow {
+  max-width: 600px;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, .name, .btn {
+  font-family: var(--font-main);
+  font-weight: 400; /* Anton is already bold-by-design */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--black) 0%, #150202 35%, var(--black) 50%, #200303 75%, var(--black) 100%);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  color: var(--white);
+  padding: 100px 0 70px;
+  text-align: center;
+  position: relative;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.eyebrow {
+  color: var(--red);
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.name {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: var(--grey);
+  margin-bottom: 8px;
+}
+
+.details {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+  margin-bottom: 32px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 2px solid var(--red);
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--red);
+  transform: translateY(-2px);
+}
+
+.btn-block {
+  width: 100%;
+  text-align: center;
+  border: 2px solid var(--red);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 80px 0;
+}
+
+.section-alt {
+  background: var(--grey);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--red);
+  margin: 16px auto 0;
+}
+
+/* ---------- Grids & Cards ---------- */
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.testimonial-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.project-card .thumb {
+  background: var(--black);
+  color: var(--white);
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-secondary);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  border-radius: 2px;
+}
+
+.project-card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.project-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.testimonial-card {
+  border-left: 3px solid var(--red);
+}
+
+.testimonial-card .quote {
+  font-style: italic;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.testimonial-card .client-name {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--red);
+}
+
+/* ---------- Form ---------- */
+#inquiryForm {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#inquiryForm label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#inquiryForm input,
+#inquiryForm select,
+#inquiryForm textarea {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  background: var(--white);
+  color: var(--black);
+}
+
+#inquiryForm input:focus,
+#inquiryForm select:focus,
+#inquiryForm textarea:focus {
+  outline: 2px solid var(--red);
+  border-color: var(--red);
+}
+
+#inquiryForm button {
+  margin-top: 24px;
+}
+
+.form-message {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-message.success { color: #1a7a1a; }
+.form-message.error { color: var(--red); }
+
+/* ---------- Contact ---------- */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-link {
+  display: inline-block;
+  min-width: 260px;
+  text-align: center;
+  padding: 14px 28px;
+  border: 2px solid var(--black);
+  border-radius: 2px;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.contact-link:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 32px 0;
+  font-family: var(--font-main);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  .hero { padding: 70px 0 50px; }
+  .section { padding: 60px 0; }
+  .contact-link { min-width: 100%; }
+}
