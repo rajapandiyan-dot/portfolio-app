@@ -46,6 +46,46 @@ h1, h2, h3, .name, .btn {
   padding: 100px 0 70px;
   text-align: center;
   position: relative;
+  overflow: hidden;
+}
+
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.16);
+  border-bottom: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  margin-bottom: 28px;
+  padding: 12px 0;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tickerScroll 16s linear infinite;
+  will-change: transform;
+}
+
+.ticker-content {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding-right: 2.8rem;
+}
+
+.ticker-content .accent {
+  color: var(--red);
+}
+
+.ticker-wrap:hover .ticker-track {
+  animation-play-state: paused;
 }
 
 @keyframes gradientMove {
@@ -54,6 +94,10 @@ h1, h2, h3, .name, .btn {
   100% { background-position: 0% 50%; }
 }
 
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
 .eyebrow {
   color: var(--red);
